@@ -1,3 +1,4 @@
+alert("Template Engine");
 class Template {
 	constructor(rootTag, html) {
 		this._rootTag = rootTag;
