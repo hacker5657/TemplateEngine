@@ -1,13 +1,14 @@
 class Template {
-	constructor(rootTag, content){
+	constructor(rootTag, html) {
 		this._rootTag = rootTag;
-		this._content = content;
+		this._html = html;
 	}
 
-	run(count = 1) {
-		for(let i = 0; i < count; i++) {
-			let contentCopy = this._content.cloneNode(true);
-			this._rootTag.appendChild(contentCopy);
+	execute(count = 1){
+		this._rootTag.innerHTML = '';
+		for(let i = 0; i < count; i++){	
+			this._rootTag.insertAdjacentHTML("beforeend", this._html);
 		}
+		
 	}
 }
